@@ -1,6 +1,6 @@
 # nopomatch
 
-This repository contains the command ```nopomatch``` for Stata, which estimates the decomposition of a binary treatment using non-parametric matching as described in [Nopo (2008)](https://www.jstor.org/stable/40043147?seq=1). This methodology has been often used to decompose wage gaps and other gaps in outcomes for a binary treatment. In other words, this algorithm is useful to decompose the difference in means between two groups (treated v. control), restricting comparisions to the common support. This is what the original paper refers to as the unexplained gap, $\Delta_0$. 
+This repository contains the command ```nopomatch``` for Stata, which estimates the decomposition of a binary treatment using non-parametric matching as described in [Nopo (2008)](https://www.jstor.org/stable/40043147?seq=1). This methodology has been often used to decompose wage gaps and other gaps in outcomes for a binary treatment. In other words, this algorithm is useful to decompose the difference in means between two groups (treated v. control) controlling for covariates, restricting comparisions to the common support. This is what the original paper refers to as the unexplained gap, $\Delta_0$. 
 
 The program also decomposes the gap in the explanied component ($\Delta_X$), and the components attributables to differences outside of the common support ($\Delta_M$ and $\Delta_F$).
 
