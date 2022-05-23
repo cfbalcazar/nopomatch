@@ -4,14 +4,12 @@ This repository contains the command ```nopomatch``` for Stata, which estimates 
 
 The program also decomposes the gap in the explanied component ($\Delta_X$), and the components attributable to differences outside of the common support for treatment and control groups ($\Delta_F$ and $\Delta_M$).
 
-I worked with this methodology many years ago and made an extension of offical do-file to allow the user computing the difference in means for binary outcomes as well, which the official do-file couldn't do properly. Useful information about this kind of decomposition methods can be found in [Fortin et al. (2011)](https://www.sciencedirect.com/science/article/abs/pii/S0169721811004072), [Kline (2011)](https://www.jstor.org/stable/29783802?seq=1) and [Sloczynski (2014)](https://onlinelibrary.wiley.com/doi/10.1111/obes.12075).
+I worked with this methodology many years ago and made an extension of offical do-file to allow the user decomposing the difference in means for binary outcomes as well, which the official do-file couldn't do properly. Useful information about this kind of decomposition methods can be found in [Fortin et al. (2011)](https://www.sciencedirect.com/science/article/abs/pii/S0169721811004072), [Kline (2011)](https://www.jstor.org/stable/29783802?seq=1) and [Sloczynski (2014)](https://onlinelibrary.wiley.com/doi/10.1111/obes.12075).
 
 To install the package and update it the following command can be used in Stata:
 ```
 net install nopomatch, from (https://raw.githubusercontent.com/cfbalcazar/nopomatch/main/nopomatch/) replace force all
 ```
-
-Improvements to the code are welcomed.
 
 ---
 
