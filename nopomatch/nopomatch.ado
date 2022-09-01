@@ -245,6 +245,7 @@ version 10.1
 	quietly sum `outcome' if `by'==0  [iw =`_fexp']
 	if ("`binary'"=="") {	
 		quietly gen _rwage=`outcome'/ r(mean) 
+	}
 	else {
 		quietly gen _rwage=`outcome'- r(mean) 
 	}
