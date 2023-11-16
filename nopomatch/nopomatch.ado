@@ -380,10 +380,10 @@ version 10.1
 	quietly save `mainfile', replace
 	
 	if "`reportby'"=="" {
-		deltas `varlist' `if', outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact') filename(`filename')
+		deltas `varlist' `if', outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact') filename(`filename') `binary'
 		if "`sd'"!="" {
 			display in green "Calculating Standard Error"
-			sderrors2 `varlist' `if', outcome(`outcome') supp(_supp) by(`by') fact(`fact')
+			sderrors2 `varlist' `if', outcome(`outcome') supp(_supp) by(`by') fact(`fact') 
 			local _sd =r(_dev)	
 			if "`filename'"!=""{
 					tempfile temp
@@ -411,19 +411,19 @@ version 10.1
 			display in green "`reportby' = `x'"
 			if "`filename'"==""{
 				if "`if'"!=""{
-					deltas `varlist' `if' & `reportby'=="`x'", outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact')
+					deltas `varlist' `if' & `reportby'=="`x'", outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact') `binary'
 				}
 				if "`if'"==""{
-					deltas `varlist' if `reportby'=="`x'", outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact')
+					deltas `varlist' if `reportby'=="`x'", outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact') `binary'
 				}
 			}
 			if "`filename'"!=""{
 
 				if "`if'"!=""{
-					deltas `varlist' `if' & `reportby'=="`x'", outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact') filename(`filename'_`x')
+					deltas `varlist' `if' & `reportby'=="`x'", outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact') filename(`filename'_`x') `binary'
 				}
 				if "`if'"==""{
-					deltas `varlist' if `reportby'=="`x'", outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact') filename(`filename'_`x')
+					deltas `varlist' if `reportby'=="`x'", outcome(`outcome') match(_match) supp(_supp) by(`by') fact(`fact') filename(`filename'_`x') `binary'
 				}
 				u "`filename'_`x'", clear
 				quietly gen category="`x'"
