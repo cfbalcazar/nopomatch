@@ -371,6 +371,9 @@ version 10.1
 		cap drop _match
 		cap drop _supp
 	}
+	tempvar _cmiss
+	quietly egen `_cmiss'=group(`varlist')
+	loc if= "`if' & `_cmiss'!=."
 		
 	quietly drop if `outcome'==.
 
