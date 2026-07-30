@@ -373,7 +373,12 @@ version 10.1
 	}
 	tempvar _cmiss
 	quietly egen `_cmiss'=group(`varlist')
-	loc if= "`if' & `_cmiss'!=."
+	if "`if'"!=""{
+		loc if= "`if' & `_cmiss'!=."
+	}
+	else {
+		loc if= "`_cmiss'!=."
+	}
 		
 	quietly drop if `outcome'==.
 
